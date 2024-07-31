@@ -30,4 +30,4 @@ else:
     df1 = knnimputer(df)
 
 df1
-df.to_csv('result.csv')
+df1.to_csv('result.csv')
