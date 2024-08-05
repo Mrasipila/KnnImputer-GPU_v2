@@ -21,6 +21,7 @@ def knnimputer(df, k_neigh=5):
     for k in range(cp_arr.shape[1]):
         if cp.isnan(cp_arr[j])[k] == True:
             cp_arr[j][k]= replace_value(cp_arr[j],cp_arr,k,k_neigh=k_neigh)
+    return cp_arr
             
 df = pd.read_csv(str(args.file))
 df.dropna(axis=0, how='all')
@@ -29,5 +30,4 @@ if args.n_neigh:
 else:
     df1 = knnimputer(df)
 
-df1
-df1.to_csv('result.csv')
+df1.savetxt("result.csv", delimiter=";")
