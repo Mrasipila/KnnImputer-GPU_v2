@@ -18,9 +18,9 @@ def replace_value(current_array, array,col,k_neigh=5):
 def knnimputer(df, k_neigh=5):
     cp_arr = cp.asarray(df.to_numpy(), dtype=cp.float32)
     for j in tqdm(range(cp_arr.shape[0])):
-    for k in range(cp_arr.shape[1]):
-        if cp.isnan(cp_arr[j])[k] == True:
-            cp_arr[j][k]= replace_value(cp_arr[j],cp_arr,k,k_neigh=k_neigh)
+        for k in range(cp_arr.shape[1]):
+            if cp.isnan(cp_arr[j])[k] == True:
+                cp_arr[j][k]= replace_value(cp_arr[j],cp_arr,k,k_neigh=k_neigh)
     return cp_arr
             
 df = pd.read_csv(str(args.file))
