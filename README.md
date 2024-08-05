@@ -9,6 +9,7 @@ Simple tool That implement KNN Imputation for GPUs
 - Cupy
 - Pandas
 - argparse
+- tqdm
 
 ## How it works
 
