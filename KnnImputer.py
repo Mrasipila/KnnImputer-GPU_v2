@@ -30,4 +30,4 @@ if args.n_neigh:
 else:
     df1 = knnimputer(df)
 
-df1.savetxt("result.csv", delimiter=";")
+cp.savetxt("result.csv", df1, delimiter=";")
